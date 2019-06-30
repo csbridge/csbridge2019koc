@@ -166,10 +166,10 @@
 
 	          <li class="divider"></li>
 	             <li><a href="../../tr/projects/stampTool.html">Damga Makinesi</a></li>
-	          	<li><a href="../../tr/projects/holePuncher.html">Hole Puncher</a></li>	
-	          	<li><a href="../../tr/projects/debrisSweeper.html">Debris Sweeper</a></li>	
-	          	<li><a href="../../tr/projects/suchADrag.html">Such a Drag</a></li>
-	          	<li><a href="../../tr/projects/keyboardKarel.html">Keyboard Karel</a></li>
+	          	<li><a href="../../tr/projects/holePuncher.html">Delgeç</a></li>	
+	          	<li><a href="../../tr/projects/debrisSweeper.html">Enkazı Kaldır</a></li>	
+	          	<li><a href="../../tr/projects/suchADrag.html">Ne Kaydırma Ama</a></li>
+	          	<li><a href="../../tr/projects/keyboardKarel.html">Karel Klavyede</a></li>
               <!--
 
 	          <li class="divider"></li>
@@ -253,9 +253,9 @@
 	        <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Formlar <b class="caret"></b></a>
 	          <ul class="dropdown-menu">
-                <li><a href="../../tr/handouts/labwork.html">How to use Eclipse</a></li>
+                <li><a href="../../tr/handouts/labwork.html">Eclipse kullanımı</a></li>
                 <li><a href="../../tr/handouts/submission.html">Çalışmaları Teslim Etme</a></li>
-                <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSf4RR1uzK5x4lSr6VKecvG37FNRGe7D-ybRiTxc76uIxoTUYQ/viewform?usp=sf_link">Sign in To Lab</a></li>
+                <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSf4RR1uzK5x4lSr6VKecvG37FNRGe7D-ybRiTxc76uIxoTUYQ/viewform?usp=sf_link">Laboratuvara giriş yapın</a></li>
 	          </ul>
 	        </li>
 
@@ -295,12 +295,12 @@
 		<!-- Header -->
 		<div id="pageHeader">
 			<h1>
-				Bouncing Balls (with Solution)
+				Zıplayan Toplar (ve Çözümü)
 			</h1>
 			<p>
-        Problem written by Chris Piech.
+        Yazan: Chris Piech.
         <br/>
-        Day7: <code>BouncingBalls.java</code>
+        7. Gün: <code>BouncingBalls.java</code>
 			</p>
 
 		</div>
@@ -309,25 +309,23 @@
 		<div class="row">
 			<div class="col-md-12">
         <p>
-        This program creates a beautiful animation of colorful bouncing balls. The finished
-        product could definitely make a solid screen saver.
+            Bu program zıplayan rengarenk toplardan oluşan muhteşem bir animasyon yaratmaktadır.
+            Bitmiş hali tam bir ekran koruyu olacak kalitededir.
         </p>
         <p>
-
-        We'll have to generate 50 circles and place them randomly about the canvas. 
-        Note that in addition to creating the balls, we'll also need to generate initial 
-        x and y velocities for each ball. 
-        These velocities should be random. Importantly, we will store the balls and 
-        velocities in three ArrayLists. 
-        We can decompose all of this into a method.
+            50 adet daire oluşturmamız ve onları ekranda rastgele konumlara yerleştirmemiz gerekmektedir.
+            Topları yaratmanın yanı sıra her birinin x ve y yönlerindeki başlangıç hızlarını da belirlememiz 
+            gerekmektedir. Bu hızlar da rastgele olmalıdırlar.
+            En önemlisi de tüm bu daire ve hızları birer Dizi Listesi (ArrayLists) içerisinde saklayacağız.
+            Tüm bunları bir metot içerisine sığdırabiliriz.
         </p>
 
 					<center>
 						<img style="width:500px;border:1px solid #000000" src="../../img/projects/bouncingBalls/demo.png">	
 					</center>
         <p>
-        On each iteration of the animation while loop, we'll also need to check for bounces on all of the 
-        balls using an inner for loop. 
+            Animasyonun while döngüsü içerinde, her bir tekrarda, seken topları tespit etmek için tüm 
+            toplar üzerinde bir iç döngü kullanmalıyız.
         </p>
 				
 			</div>
@@ -335,7 +333,7 @@
 		
 		<div class="row">
 			<div class="col-md-12">
-				<h2>Solution</h2>
+				<h2>Çözüm</h2>
 
 
 <pre id="editor" style="height:1050px">
@@ -424,8 +422,12 @@ public class BouncingBalls extends GraphicsProgram {
 <div class="footer">
 	<p class="pull-left">
 		&#169; Stanford 2019 &#124; Hazırlayan: 
-    <a href="http://stanford.edu/~cpiech">Chris</a> (Tüm ekibin de yardımıyla).
-		Pek yetenekli birçok eğitimci tarafından hazırlanan muhteşem CS106A sınıfından esinlenilmiştir. <a href="http://cs.stanford.edu/people/eroberts/">Eric Roberts</a> ve <a href="http://robotics.stanford.edu/~sahami/bio.html">Mehran Sahami</a>'a özel teşekkürlerimizi sunarız.
+    	<a href="http://stanford.edu/~cpiech">Chris</a> (Tüm ekibin de yardımıyla).
+		Pek yetenekli birçok eğitimci tarafından hazırlanan muhteşem CS106A sınıfından esinlenilmiştir. 
+		<a href="http://cs.stanford.edu/people/eroberts/">Eric Roberts</a> ve 
+		<a href="http://robotics.stanford.edu/~sahami/bio.html">Mehran Sahami</a>'ye özel teşekkürlerimizi sunarız.
+		Türkçe tercüme ile ilgili tüm soru ve görüşleriniz için 
+		<a href="http://http://web.stanford.edu/~sarslan/">Serhat Arslan</a> ile iletişime geçebilirsiniz.
 	</p>
 	<!--<p class="pull-right">
 		<a href="../../fall12">Fall 2012</a>
