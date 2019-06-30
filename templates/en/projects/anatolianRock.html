@@ -15,17 +15,19 @@
 		<!-- Header -->
 		<div id="pageHeader">
 			<h1>
-				Stamp Tool (with Solution)
+				Anatolian Rock (with Solution)
 			</h1>
 			<p>
-				Problem written by a mystery CS106A Lecturer.
+				Problem written by 
+Barış Bozkurt.
         <br/>
-        Day5: <code>StampTool.java</code>
+        Day6: <code>AnatolianRock.java</code>
 			</p>
 
 		</div>
 		<hr/>
 
+    <!--
 		<div class="row">
 			<div class="col-md-12">
 				<p>
@@ -42,46 +44,58 @@
 				
 			</div>
 		</div>
+    -->
 		
 		<div class="row">
 			<div class="col-md-12">
 				<h2>Solution</h2>
 
 
-<pre id="editor" style="height:580px">
+<pre id="editor" style="height:800px">
 /**
- * Class: StampTool
+ * Class: AnatolianRock
  * -----------------
- * Stamps a square stamp wherever the user clicks.
+ * A program that authors random song lyrics in the genre of Turkish/Anatolian Rock
+ * The main idea comes from Cem Yilmaz: https://www.youtube.com/watch?v=oXZY1YTLAHI
+ * Each line in the lyrics is created by concatenating randomly selected elements
+ * from string arrays *_left, *_mid, *_right
  */
-public class StampTool extends GraphicsProgram {
 
-    private static final int SIZE = 50;
+public class AnatolianRock extends ConsoleProgram {
 
-    private GRect stamp = new GRect(SIZE, SIZE);
+	RandomGenerator rgen = RandomGenerator.getInstance();
 
-    public void run() {
-        stamp.setColor(Color.BLUE);
-        stamp.setFilled(true);
-        add(stamp);
-        addMouseListeners();
-    }
+	private String[] A_left = {"Yar","Ah","Bak","Of","Hey","Deliyim"};
+	private String[] A_mid = {"bu beden","yatagim","yuregim","bu yaz","dort yanim","ruyalar"};
+	private String[] A_right = {"buz kesti","ozler seni","alev alev","toz duman","kavruldu","delik desik"};
 
-    public void mouseClicked(MouseEvent e) {
-        int x = e.getX() - SIZE / 2;
-        int y = e.getY() - SIZE / 2;
+	private String[] B_left = {"bittim","gittin","sensiz","simdi","yalniz","sonunda"};
+	private String[] B_mid = {"oldum","gonul","canim","dunyam","ruhum","aklim"};
+	private String[] B_right = {"divane","avare","virane","bicare","amade","pervane"};
 
-        GRect r = new GRect(SIZE, SIZE);
-        r.setFilled(true);
-        add(r, x, y);
-    }
+	private String[] NAKARAT_left={"e hadi","kiz sen","bu gece","a canim","deli yar","sebebim"};
+	private String[] NAKARAT_mid={"fikrimi","tenimi","askimi","kalbimi","omrumu","sevdami"};
+	private String[] NAKARAT_right={"benden cal","surgune sal","yollara vur","dagit, savur","atese at","ruhuna kat"};
 
-    public void mouseMoved(MouseEvent e) {
-        int x = e.getX() - SIZE / 2;
-        int y = e.getY() - SIZE / 2;
-        stamp.setLocation(x, y);
-    }
+	public void run(){
+		println("--------A-----------");
+		printRandomSequence(A_left, A_mid, A_right,4);
+		println("------NAKARAT-------");
+		printRandomSequence(NAKARAT_left,NAKARAT_mid,NAKARAT_right,4);
+		println("--------B-----------");
+		printRandomSequence(B_left,B_mid,B_right,4);
+	}
+
+	private void printRandomSequence(String[] left, String[] mid, String[] right, int numLines){
+		for(int i = 0; i < numLines; i++) {
+			print(left[rgen.nextInt(0, left.length-1)] + " ");
+			print(mid[rgen.nextInt(0, mid.length-1)] + " ");
+			print(right[rgen.nextInt(0, right.length - 1)]);
+			print("\n");
+		}
+	}
 }
+
 </pre>
     
 <script src="{{pathToRoot}}plugins/ace/ace.js" type="text/javascript" charset="utf-8"></script>
