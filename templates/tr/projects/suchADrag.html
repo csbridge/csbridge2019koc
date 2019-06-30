@@ -15,12 +15,12 @@
 		<!-- Header -->
 		<div id="pageHeader">
 			<h1>
-				Such A Drag (with Solution)
+                Ne Kaydırma Ama (ve Çözümü)
 			</h1>
 			<p>
-				Problem written by Chris Piech
+				Yazan: Chris Piech
         <br/>
-        Day5: <code>SuchADrag.java</code>
+        5. Gün: <code>SuchADrag.java</code>
 			</p>
 
 		</div>
@@ -29,15 +29,14 @@
 		<div class="row">
 			<div class="col-md-12">
         <p>
-        This program allows users to drag shapes around the screen. Let's take a look at 
-        how it's implemented. 
+            Bu program kullanıcıların şekilleri ekran üzerinde kaydırmasını sağlar.
+            Haydi şimdi bu programın nasıl oluşturulduğuna bakalım.
         </p>
         <p>
-        First, we generate 10 GOvals and place them randomly about the canvas. This 
-        happens in the method addRandomObjects( ). Notice how we use the constants 
-        NUM_RANDOM_OBJECTS and OBJECT_SIZE instead of the magic numbers 10 and 50 when creating
-        the objects. 
-
+            Öncelikle, 10 adet GOval yaratıyoruz ve bunları ekran üzerinde rastgele konumlandırıyoruz.
+            Bu işlem addRandomObjects( ) metodu içerisinde gerçekleşiyor. Objeleri oluştururken 10 ve 50
+            gibi gizemli sayılar kullanmak yerine NUM_RANDOM_OBJECTS ve OBJECT_SIZE isimli sabitleri
+            nasıl kullandığımıza dikkat edin.
         <p>
 					<center>
 						<img style="width:500px;border:1px solid #000000" src="{{pathToRoot}}img/projects/suchADrag/demo.gif">	
@@ -45,18 +44,20 @@
 				</p>
 
 		<p>
-        Once we've added the random objects, we tell the program to listen for mouse events
-        like mouse clicks and drags with the addMouseListeners( ) method. We also specify
-        what the program should do in the event of a mouse click or drag by implementing the mousePressed and mouseDragged
-        methods. Because we can't pass variables other than the MouseEvent to the mouseDragged method,
-        we need an instance variable to keep track of which oval was clicked. 
-        Ask one of the teachers to explain why we need an instance variable here if it doesn't make sense.</p>
+            Rastgele objeleri ekledikten sonra programımıza addMouseListeners( ) metodunu kullanarak
+            tıklama ve kaydırma gibi fare olaylarını dinlemesini söylüyoruz. Ayrıca programımıza tıklama ve kaydırma 
+            olaylarında ne yapması gerektiğini de mousePressed ve mouseDragged metotlarının ,içini doldurarak söylemiş 
+            oluyoruz. MousePressed ve mouseDragged metotlarına kendi değişkenlerimizi sokamayacağımız için hangi GOval 
+            objesinin tıklandığını takip edeblmek için bir 'instance variable' kullanmamız gerekecektir.
+            Instance Variable konusunda kafanızda soru işaretleri oluştuysa tam da bu noktada grup liderlerinize 
+            sorabilirsiniz.
+        </p>
 			</div>
 		</div>
 		
 		<div class="row">
 			<div class="col-md-12">
-				<h2>Solution</h2>
+				<h2>Çözüm</h2>
 
 
 <pre id="editor" style="height:1150px">
