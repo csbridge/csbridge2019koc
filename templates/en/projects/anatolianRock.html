@@ -1,0 +1,131 @@
+<head>
+
+	%include templates/parts/head.html
+
+
+</head>
+<body>
+
+	<!-- Navigation Bar -->
+	%include templates/parts/navBar.html
+
+	<!-- Main Content -->
+	<div class="container">
+
+		<!-- Header -->
+		<div id="pageHeader">
+			<h1>
+				Anatolian Rock (with Solution)
+			</h1>
+			<p>
+				Problem written by  Barış Bozkurt
+        <br/>
+        Day5: <code>AnatolianRock.java</code>
+			</p>
+
+		</div>
+		<hr/>
+
+		<div class="row">
+			<div class="col-md-12">
+        <p>
+        This program generates random lyrics for an Anatolian Rock song, like in the 
+        screenshot below. 
+        The song consists of three sections: verse A, chorus (nakarat), and verse B.
+        Each section is 4 lines long. 
+        </p>
+        <p>
+        To generate one line we randomly select 
+        a left phrase like "Yar" or "Ah", a middle phrase like "bu yaz" or "ruyular", and
+        a right phrase like "buz kesti" or "alev alev" and combine them together. 
+        Where do we randomly select the phrases from? For each each section, we've included
+        three String arrays of possible left, middle and right phrases. We should randomly
+        select phrases from these arrays. 
+        </p>
+        
+					<center>
+						<img style="width:500px" src="{{pathToRoot}}img/projects/anatolianRock/demo.png">	
+					</center>
+				</p>
+
+		<p>
+        Solution: Let's define a method printRandomSection, which will generate a random
+        section of the song. This method needs to know: (1) the number of lines in section,
+        (2) the arrays to select random words from. So, lets include (1) a numLines parameter
+        and (2) parameters for the left, mid and right String arrays. 
+        </p>
+        <p>
+        To generate each line, we must randomly select a String from each array. 
+        We can randomly select an element from the array by generating
+        a random number between 0 and array.length - 1. Note that to print the 
+        left, middle and right phrases on the same line we use print instead of println.
+        </p>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-md-12">
+				<h2>Solution</h2>
+
+
+<pre id="editor" style="height:600px">
+/**
+* Class: AnatolianRock
+* -----------------
+* A program that authors random song lyrics in the genre of Turkish/Anatolian Rock
+* The main idea comes from Cem Yilmaz: https://www.youtube.com/watch?v=oXZY1YTLAHI
+* Each line in the lyrics is created by concatenating randomly selected elements from
+* string arrays *_left, *_mid, *_right 
+*/
+public class AnatolianRock extends ConsoleProgram {
+    RandomGenerator rgen=RandomGenerator.getInstance();
+    private String[] A_left={"Yar","Ah","Bak","Of","Hey","Deliyim"};
+    private String[] A_mid={"bu beden","yatagim","yuregim","bu yaz","dort yanim","ruyalar"};
+    private String[] A_right={"buz kesti","ozler seni","alev alev","toz duman","kavruldu","delik desik"};
+
+    private String[] B_left={"bittim","gittin","sensiz","simdi","yalniz","sonunda"};
+    private String[] B_mid={"oldum","gonul","canim","dunyam","ruhum","aklim"};
+    private String[] B_right={"divane","avare","virane","bicare","amade","pervane"};
+
+    private String[] NAKARAT_left={"e hadi","kiz sen","bu gece","a canim","deli yar","sebebim"};
+    private String[] NAKARAT_mid={"fikrimi","tenimi","askimi","kalbimi","omrumu","sevdami"};
+    private String[] NAKARAT_right={"benden cal","surgune sal","yollara vur","dagit, savur","atese at","ruhuna kat"};
+    
+    public void run(){
+        println("--------A-----------");
+        printRandomSection(A_left,A_mid,A_right,4);
+        println("------NAKARAT-------");
+        printRandomSection(NAKARAT_left,NAKARAT_mid,NAKARAT_right,4);
+        println("--------B-----------");
+        printRandomSection(B_left,B_mid,B_right,4);		
+    }
+    private void printRandomSection(String[] left,String[] mid,String[] right,int numLines){
+        for(int i=0;i < numLines; i++){
+            String 
+            print(left[rgen.nextInt(0,left.length-1)]+" ");
+            print(mid[rgen.nextInt(0,mid.length-1)]+" ");
+            println(right[rgen.nextInt(0,right.length-1)]);
+        }
+    }
+}
+
+</pre>
+    
+<script src="{{pathToRoot}}plugins/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+   editor.setTheme('ace/theme/eclipse');
+   editor.getSession().setMode("ace/mode/java");
+   editor.setReadOnly(true);
+   editor.setShowPrintMargin(false);
+   editor.renderer.setShowGutter(false); 
+    /*editor.setTheme("ace/theme/eclipse");
+    editor.getSession().setMode("ace/mode/java");*/
+</script>
+	
+	</div>
+	</div>
+		%include templates/parts/footer.html
+
+	</div>
+</body>
