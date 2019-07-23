@@ -26,25 +26,42 @@ Barış Bozkurt.
 
 		</div>
 		<hr/>
-
-    <!--
 		<div class="row">
 			<div class="col-md-12">
-				<p>
-					Write a program that has a GRect (which represents a stamp) follow a users mouse around and draw a GRect on the screen centered around the mouse when the user clicks </p>
-
-				<p>
+        <p>
+        This program generates random lyrics for an Anatolian Rock song, like in the 
+        screenshot below. 
+        The song consists of three sections: verse A, chorus (nakarat), and verse B.
+        Each section is 4 lines long. 
+        </p>
+        <p>
+        To generate one line we randomly select 
+        a left phrase like "Yar" or "Ah", a middle phrase like "bu yaz" or "ruyular", and
+        a right phrase like "buz kesti" or "alev alev" and combine them together. 
+        Where do we randomly select the phrases from? For each each section, we've included
+        three String arrays of possible left, middle and right phrases. We should randomly
+        select phrases from these arrays. 
+        </p>
+        
 					<center>
-						<img style="width:500px" src="{{pathToRoot}}img/projects/stampTool/demo.png">	
+						<img style="width:500px" src="{{pathToRoot}}img/projects/anatolianRock/demo.png">	
 					</center>
 				</p>
 
-				<p>Remember that since you need to have a variable that you can change inside a mouse event class (the GRect which represents your stamp) you are going to have to declare it as an instance variable. Ask one of the teachers to explain this if it doesn't make sense.</p>
-
-				
+		<p>
+        Solution: Let's define a method printRandomSection, which will generate a random
+        section of the song. This method needs to know: (1) the number of lines in section,
+        (2) the arrays to select random words from. So, lets include (1) a numLines parameter
+        and (2) parameters for the left, mid and right String arrays. 
+        </p>
+        <p>
+        To generate each line, we must randomly select a String from each array. 
+        We can randomly select an element from the array by generating
+        a random number between 0 and array.length - 1. Note that to print the 
+        left, middle and right phrases on the same line we use print instead of println.
+        </p>
 			</div>
 		</div>
-    -->
 		
 		<div class="row">
 			<div class="col-md-12">
